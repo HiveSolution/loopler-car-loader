@@ -4,6 +4,10 @@ Adds new cars to The Loopler (BepInEx 6, IL2CPP). Each car is one JSON file, opt
 sprite next to it. Every file in the cars folder is read when the game starts, and the cars appear in
 the car select after the game's own nine.
 
+| Car select | On the track |
+| --- | --- |
+| ![Rocket in the car select](docs/screenshots/select-rocket.png) | ![Rocket on the track](docs/screenshots/track.png) |
+
 ```json
 {
   "id": "rocket",
