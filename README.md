@@ -20,8 +20,10 @@ the car select after the game's own nine.
 ## Install
 
 1. Install [BepInEx 6 (IL2CPP, x64)](https://builds.bepinex.dev/projects/bepinex_be) into the game folder and start the game once.
-2. Extract the release zip into the game folder, so that `LooplerCarLoader.dll` ends up in `<game>\BepInEx\plugins\LooplerCarLoader\`.
-3. Put car files into `<game>\BepInEx\config\LooplerCars\` (the folder is created on the first start). The [examples](examples/) are a good start.
+2. Download a zip from the [latest release](https://github.com/HiveSolution/loopler-car-loader/releases/latest) and extract it into the game folder:
+   - `LooplerCarLoader-v1.0.0.zip`: the framework only. Pick this one to play car mods made by others.
+   - `LooplerCarLoader-v1.0.0-with-examples.zip`: the framework plus the two [example cars](examples/), to try it out or as a start for your own.
+3. Put car files into `<game>\BepInEx\config\LooplerCars\` (the folder is created on the first start).
 
 Tested with BepInEx 6.0.0-be.788 on The Loopler built with Unity 6000.3.16f1.
 
@@ -56,6 +58,13 @@ The game's car sprites are **11 x 11 pixels**, top-down with the car pointing up
 yours matches them. Save as an 8-bit PNG (RGBA, RGB or indexed with a palette, not interlaced), which
 is what pixel art editors like Aseprite export by default. Without a sprite the car uses its base
 car's.
+
+### Sharing your cars
+
+Release only your own files, in their own folder, as `BepInEx\config\LooplerCars\<your-mod>\`
+inside the zip, so players extract it into the game folder like any BepInEx mod. Don't include the
+framework's DLL: list Loopler Car Loader as a requirement and link this page instead. Each `id` must
+be unique across every car a player has installed, so prefix yours (`yourname-rocket`).
 
 ## Saves and removing cars
 

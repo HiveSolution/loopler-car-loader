@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>LooplerCarLoader</AssemblyName>
     <RootNamespace>LooplerCarLoader</RootNamespace>
-    <Version>0.0.1</Version>
+    <Version>1.0.0</Version>
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <DebugType>none</DebugType>
