@@ -1,0 +1,11 @@
+{
+  // A plain car: Durabler's look and defaults, none of its ability.
+  "id": "rocket",
+  "name": "Rocket",
+  "effect": "+50% top speed, -30% fuel efficiency, +1 upgrade slot",
+  "base": "Durabler",
+  "sprite": "rocket.png",
+  "durability": 60,
+  "stats": { "TopSpeed": 1.5, "FuelEfficiency": 0.7 },
+  "bonusUpgradeSlots": 1
+}

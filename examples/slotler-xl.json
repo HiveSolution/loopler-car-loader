@@ -1,0 +1,9 @@
+{
+  // Keeps Slotler's own ability (+1 slot) and adds two more on top.
+  "id": "slotler-xl",
+  "name": "Slotler XL",
+  "effect": "Three extra upgrade slots",
+  "base": "Slotler",
+  "keepBaseAbility": true,
+  "bonusUpgradeSlots": 2
+}

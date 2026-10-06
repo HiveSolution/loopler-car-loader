@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Checks the PNG reader against the example sprite. Run: dotnet run -project tests\PngCheck (two dashes) -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <!-- The game's BepInEx runs on .NET 6. -->
+    <TargetFramework>net6.0</TargetFramework>
+    <CheckEolTargetFramework>false</CheckEolTargetFramework>
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\Png.cs" />
+  </ItemGroup>
+
+</Project>
