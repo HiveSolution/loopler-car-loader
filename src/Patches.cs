@@ -249,6 +249,40 @@ static class Patches
         swappedFrom = -1;
     }
 
+    // ---- Daily and weekly runs --------------------------------------------
+
+    // Both roll their car from CarManager.cars, and the game's per-car lists throw on a
+    // modded index (New Run broke on a day that rolled one). Hidden while they're rolled,
+    // the daily and weekly cars match everyone else's.
+    static int hideDepth;
+
+    // The daily is rolled in GenerateDailyMetaUnlocks (DailyRunData's constructor isn't called).
+    [HarmonyPrefix, HarmonyPatch(typeof(DailyRunData), nameof(DailyRunData.GenerateDailyMetaUnlocks), typeof(Il2CppSystem.DateTime))]
+    static void DailyPre() => HideModded();
+
+    [HarmonyPostfix, HarmonyPatch(typeof(DailyRunData), nameof(DailyRunData.GenerateDailyMetaUnlocks), typeof(Il2CppSystem.DateTime))]
+    static void DailyPost() => ShowModded();
+
+    [HarmonyPrefix, HarmonyPatch(typeof(WeeklyRunData), nameof(WeeklyRunData.PrepareRotation), typeof(Il2CppSystem.DateTime))]
+    static void WeeklyPre() => HideModded();
+
+    [HarmonyPostfix, HarmonyPatch(typeof(WeeklyRunData), nameof(WeeklyRunData.PrepareRotation), typeof(Il2CppSystem.DateTime))]
+    static void WeeklyPost() => ShowModded();
+
+    static void HideModded()
+    {
+        var cars = CarManager.instance?.cars;
+        if (hideDepth++ == 0 && byIndex.Count > 0 && cars != null && cars.Count == vanillaCount + byIndex.Count)
+            cars.RemoveRange(vanillaCount, byIndex.Count);
+    }
+
+    static void ShowModded()
+    {
+        var cars = CarManager.instance?.cars;
+        if (--hideDepth == 0 && cars != null && cars.Count == vanillaCount)
+            foreach (var c in byIndex.Values.OrderBy(c => c.car.carIndex)) cars.Add(c.car);
+    }
+
     // ---- The run ----------------------------------------------------------
 
     // The run itself only ever holds a vanilla car: RunData.carIndex is the base car's, so

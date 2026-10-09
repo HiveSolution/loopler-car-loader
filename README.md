@@ -25,8 +25,8 @@ the car select after the game's own nine.
 
 1. Install [BepInEx 6 (IL2CPP, x64)](https://builds.bepinex.dev/projects/bepinex_be) into the game folder and start the game once.
 2. Download a zip from the [latest release](https://github.com/HiveSolution/loopler-car-loader/releases/latest) and extract it into the game folder:
-   - `LooplerCarLoader-v1.0.0.zip`: the framework only. Pick this one to play car mods made by others.
-   - `LooplerCarLoader-v1.0.0-with-examples.zip`: the framework plus the two [example cars](examples/), to try it out or as a start for your own.
+   - `LooplerCarLoader-v1.0.1.zip`: the framework only. Pick this one to play car mods made by others.
+   - `LooplerCarLoader-v1.0.1-with-examples.zip`: the framework plus the two [example cars](examples/), to try it out or as a start for your own.
 3. Put car files into `<game>\BepInEx\config\LooplerCars\` (the folder is created on the first start).
 
 Tested with BepInEx 6.0.0-be.788 on The Loopler built with Unity 6000.3.16f1.
